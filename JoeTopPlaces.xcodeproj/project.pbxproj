@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE5D9164153FA889001ED2FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5D9163153FA889001ED2FA /* UIKit.framework */; };
+		EE5D9166153FA889001ED2FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5D9165153FA889001ED2FA /* Foundation.framework */; };
+		EE5D9168153FA889001ED2FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5D9167153FA889001ED2FA /* CoreGraphics.framework */; };
+		EE5D916E153FA889001ED2FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE5D916C153FA889001ED2FA /* InfoPlist.strings */; };
+		EE5D9170153FA889001ED2FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5D916F153FA889001ED2FA /* main.m */; };
+		EE5D9174153FA889001ED2FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5D9173153FA889001ED2FA /* AppDelegate.m */; };
+		EE5D9177153FA889001ED2FA /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5D9175153FA889001ED2FA /* MainStoryboard_iPhone.storyboard */; };
+		EE5D917A153FA889001ED2FA /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5D9178153FA889001ED2FA /* MainStoryboard_iPad.storyboard */; };
+		EE5D917D153FA889001ED2FA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5D917C153FA889001ED2FA /* FirstViewController.m */; };
+		EE5D917F153FA889001ED2FA /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5D917E153FA889001ED2FA /* first.png */; };
+		EE5D9181153FA889001ED2FA /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5D9180153FA889001ED2FA /* first@2x.png */; };
+		EE5D9184153FA889001ED2FA /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5D9183153FA889001ED2FA /* SecondViewController.m */; };
+		EE5D9186153FA889001ED2FA /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5D9185153FA889001ED2FA /* second.png */; };
+		EE5D9188153FA889001ED2FA /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5D9187153FA889001ED2FA /* second@2x.png */; };
+		EE5D9190153FA889001ED2FA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5D918F153FA889001ED2FA /* SenTestingKit.framework */; };
+		EE5D9191153FA889001ED2FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5D9163153FA889001ED2FA /* UIKit.framework */; };
+		EE5D9192153FA889001ED2FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5D9165153FA889001ED2FA /* Foundation.framework */; };
+		EE5D919A153FA889001ED2FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE5D9198153FA889001ED2FA /* InfoPlist.strings */; };
+		EE5D919D153FA88A001ED2FA /* JoeTopPlacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5D919C153FA88A001ED2FA /* JoeTopPlacesTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE5D9193153FA889001ED2FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE5D9156153FA889001ED2FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE5D915E153FA889001ED2FA;
+			remoteInfo = JoeTopPlaces;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EE5D915F153FA889001ED2FA /* JoeTopPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoeTopPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE5D9163153FA889001ED2FA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EE5D9165153FA889001ED2FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EE5D9167153FA889001ED2FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EE5D916B153FA889001ED2FA /* JoeTopPlaces-Info.plist */ = {isa = PBXFileReference; path = "JoeTopPlaces-Info.plist"; sourceTree = "<group>"; };
+		EE5D916D153FA889001ED2FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EE5D916F153FA889001ED2FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EE5D9171153FA889001ED2FA /* JoeTopPlaces-Prefix.pch */ = {isa = PBXFileReference; path = "JoeTopPlaces-Prefix.pch"; sourceTree = "<group>"; };
+		EE5D9172153FA889001ED2FA /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		EE5D9173153FA889001ED2FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EE5D9176153FA889001ED2FA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		EE5D9179153FA889001ED2FA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		EE5D917B153FA889001ED2FA /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		EE5D917C153FA889001ED2FA /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		EE5D917E153FA889001ED2FA /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		EE5D9180153FA889001ED2FA /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		EE5D9182153FA889001ED2FA /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		EE5D9183153FA889001ED2FA /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		EE5D9185153FA889001ED2FA /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		EE5D9187153FA889001ED2FA /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		EE5D918E153FA889001ED2FA /* JoeTopPlacesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoeTopPlacesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE5D918F153FA889001ED2FA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		EE5D9197153FA889001ED2FA /* JoeTopPlacesTests-Info.plist */ = {isa = PBXFileReference; path = "JoeTopPlacesTests-Info.plist"; sourceTree = "<group>"; };
+		EE5D9199153FA889001ED2FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EE5D919B153FA889001ED2FA /* JoeTopPlacesTests.h */ = {isa = PBXFileReference; path = JoeTopPlacesTests.h; sourceTree = "<group>"; };
+		EE5D919C153FA88A001ED2FA /* JoeTopPlacesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoeTopPlacesTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE5D915C153FA889001ED2FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE5D9164153FA889001ED2FA /* UIKit.framework in Frameworks */,
+				EE5D9166153FA889001ED2FA /* Foundation.framework in Frameworks */,
+				EE5D9168153FA889001ED2FA /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE5D918A153FA889001ED2FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE5D9190153FA889001ED2FA /* SenTestingKit.framework in Frameworks */,
+				EE5D9191153FA889001ED2FA /* UIKit.framework in Frameworks */,
+				EE5D9192153FA889001ED2FA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE5D9154153FA889001ED2FA = {
+			isa = PBXGroup;
+			children = (
+				EE5D9169153FA889001ED2FA /* JoeTopPlaces */,
+				EE5D9195153FA889001ED2FA /* JoeTopPlacesTests */,
+				EE5D9162153FA889001ED2FA /* Frameworks */,
+				EE5D9160153FA889001ED2FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE5D9160153FA889001ED2FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE5D915F153FA889001ED2FA /* JoeTopPlaces.app */,
+				EE5D918E153FA889001ED2FA /* JoeTopPlacesTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE5D9162153FA889001ED2FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE5D9163153FA889001ED2FA /* UIKit.framework */,
+				EE5D9165153FA889001ED2FA /* Foundation.framework */,
+				EE5D9167153FA889001ED2FA /* CoreGraphics.framework */,
+				EE5D918F153FA889001ED2FA /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE5D9169153FA889001ED2FA /* JoeTopPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				EE5D9172153FA889001ED2FA /* AppDelegate.h */,
+				EE5D9173153FA889001ED2FA /* AppDelegate.m */,
+				EE5D9175153FA889001ED2FA /* MainStoryboard_iPhone.storyboard */,
+				EE5D9178153FA889001ED2FA /* MainStoryboard_iPad.storyboard */,
+				EE5D917B153FA889001ED2FA /* FirstViewController.h */,
+				EE5D917C153FA889001ED2FA /* FirstViewController.m */,
+				EE5D917E153FA889001ED2FA /* first.png */,
+				EE5D9180153FA889001ED2FA /* first@2x.png */,
+				EE5D9182153FA889001ED2FA /* SecondViewController.h */,
+				EE5D9183153FA889001ED2FA /* SecondViewController.m */,
+				EE5D9185153FA889001ED2FA /* second.png */,
+				EE5D9187153FA889001ED2FA /* second@2x.png */,
+				EE5D916A153FA889001ED2FA /* Supporting Files */,
+			);
+			path = JoeTopPlaces;
+			sourceTree = "<group>";
+		};
+		EE5D916A153FA889001ED2FA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE5D916B153FA889001ED2FA /* JoeTopPlaces-Info.plist */,
+				EE5D916C153FA889001ED2FA /* InfoPlist.strings */,
+				EE5D916F153FA889001ED2FA /* main.m */,
+				EE5D9171153FA889001ED2FA /* JoeTopPlaces-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EE5D9195153FA889001ED2FA /* JoeTopPlacesTests */ = {
+			isa = PBXGroup;
+			children = (
+				EE5D919B153FA889001ED2FA /* JoeTopPlacesTests.h */,
+				EE5D919C153FA88A001ED2FA /* JoeTopPlacesTests.m */,
+				EE5D9196153FA889001ED2FA /* Supporting Files */,
+			);
+			path = JoeTopPlacesTests;
+			sourceTree = "<group>";
+		};
+		EE5D9196153FA889001ED2FA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EE5D9197153FA889001ED2FA /* JoeTopPlacesTests-Info.plist */,
+				EE5D9198153FA889001ED2FA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE5D915E153FA889001ED2FA /* JoeTopPlaces */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE5D91A0153FA88A001ED2FA /* Build configuration list for PBXNativeTarget "JoeTopPlaces" */;
+			buildPhases = (
+				EE5D915B153FA889001ED2FA /* Sources */,
+				EE5D915C153FA889001ED2FA /* Frameworks */,
+				EE5D915D153FA889001ED2FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JoeTopPlaces;
+			productName = JoeTopPlaces;
+			productReference = EE5D915F153FA889001ED2FA /* JoeTopPlaces.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE5D918D153FA889001ED2FA /* JoeTopPlacesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE5D91A3153FA88A001ED2FA /* Build configuration list for PBXNativeTarget "JoeTopPlacesTests" */;
+			buildPhases = (
+				EE5D9189153FA889001ED2FA /* Sources */,
+				EE5D918A153FA889001ED2FA /* Frameworks */,
+				EE5D918B153FA889001ED2FA /* Resources */,
+				EE5D918C153FA889001ED2FA /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE5D9194153FA889001ED2FA /* PBXTargetDependency */,
+			);
+			name = JoeTopPlacesTests;
+			productName = JoeTopPlacesTests;
+			productReference = EE5D918E153FA889001ED2FA /* JoeTopPlacesTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE5D9156153FA889001ED2FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = EE5D9159153FA889001ED2FA /* Build configuration list for PBXProject "JoeTopPlaces" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EE5D9154153FA889001ED2FA;
+			productRefGroup = EE5D9160153FA889001ED2FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE5D915E153FA889001ED2FA /* JoeTopPlaces */,
+				EE5D918D153FA889001ED2FA /* JoeTopPlacesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE5D915D153FA889001ED2FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE5D916E153FA889001ED2FA /* InfoPlist.strings in Resources */,
+				EE5D9177153FA889001ED2FA /* MainStoryboard_iPhone.storyboard in Resources */,
+				EE5D917A153FA889001ED2FA /* MainStoryboard_iPad.storyboard in Resources */,
+				EE5D917F153FA889001ED2FA /* first.png in Resources */,
+				EE5D9181153FA889001ED2FA /* first@2x.png in Resources */,
+				EE5D9186153FA889001ED2FA /* second.png in Resources */,
+				EE5D9188153FA889001ED2FA /* second@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE5D918B153FA889001ED2FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE5D919A153FA889001ED2FA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EE5D918C153FA889001ED2FA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE5D915B153FA889001ED2FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE5D9170153FA889001ED2FA /* main.m in Sources */,
+				EE5D9174153FA889001ED2FA /* AppDelegate.m in Sources */,
+				EE5D917D153FA889001ED2FA /* FirstViewController.m in Sources */,
+				EE5D9184153FA889001ED2FA /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE5D9189153FA889001ED2FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE5D919D153FA88A001ED2FA /* JoeTopPlacesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE5D9194153FA889001ED2FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE5D915E153FA889001ED2FA /* JoeTopPlaces */;
+			targetProxy = EE5D9193153FA889001ED2FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EE5D916C153FA889001ED2FA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE5D916D153FA889001ED2FA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EE5D9175153FA889001ED2FA /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE5D9176153FA889001ED2FA /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		EE5D9178153FA889001ED2FA /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE5D9179153FA889001ED2FA /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		EE5D9198153FA889001ED2FA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE5D9199153FA889001ED2FA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE5D919E153FA88A001ED2FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE5D919F153FA88A001ED2FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE5D91A1153FA88A001ED2FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JoeTopPlaces/JoeTopPlaces-Prefix.pch";
+				INFOPLIST_FILE = "JoeTopPlaces/JoeTopPlaces-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EE5D91A2153FA88A001ED2FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JoeTopPlaces/JoeTopPlaces-Prefix.pch";
+				INFOPLIST_FILE = "JoeTopPlaces/JoeTopPlaces-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EE5D91A4153FA88A001ED2FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JoeTopPlaces.app/JoeTopPlaces";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JoeTopPlaces/JoeTopPlaces-Prefix.pch";
+				INFOPLIST_FILE = "JoeTopPlacesTests/JoeTopPlacesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		EE5D91A5153FA88A001ED2FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JoeTopPlaces.app/JoeTopPlaces";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JoeTopPlaces/JoeTopPlaces-Prefix.pch";
+				INFOPLIST_FILE = "JoeTopPlacesTests/JoeTopPlacesTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE5D9159153FA889001ED2FA /* Build configuration list for PBXProject "JoeTopPlaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE5D919E153FA88A001ED2FA /* Debug */,
+				EE5D919F153FA88A001ED2FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE5D91A0153FA88A001ED2FA /* Build configuration list for PBXNativeTarget "JoeTopPlaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE5D91A1153FA88A001ED2FA /* Debug */,
+				EE5D91A2153FA88A001ED2FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EE5D91A3153FA88A001ED2FA /* Build configuration list for PBXNativeTarget "JoeTopPlacesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE5D91A4153FA88A001ED2FA /* Debug */,
+				EE5D91A5153FA88A001ED2FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE5D9156153FA889001ED2FA /* Project object */;
+}
