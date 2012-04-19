@@ -26,6 +26,7 @@
 		EE5D9192153FA889001ED2FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5D9165153FA889001ED2FA /* Foundation.framework */; };
 		EE5D919A153FA889001ED2FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE5D9198153FA889001ED2FA /* InfoPlist.strings */; };
 		EE5D919D153FA88A001ED2FA /* JoeTopPlacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5D919C153FA88A001ED2FA /* JoeTopPlacesTests.m */; };
+		EE5D91AA153FA8A0001ED2FA /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5D91A9153FA8A0001ED2FA /* FlickrFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,28 +44,31 @@
 		EE5D9163153FA889001ED2FA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EE5D9165153FA889001ED2FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EE5D9167153FA889001ED2FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		EE5D916B153FA889001ED2FA /* JoeTopPlaces-Info.plist */ = {isa = PBXFileReference; path = "JoeTopPlaces-Info.plist"; sourceTree = "<group>"; };
+		EE5D916B153FA889001ED2FA /* JoeTopPlaces-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JoeTopPlaces-Info.plist"; sourceTree = "<group>"; };
 		EE5D916D153FA889001ED2FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EE5D916F153FA889001ED2FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		EE5D9171153FA889001ED2FA /* JoeTopPlaces-Prefix.pch */ = {isa = PBXFileReference; path = "JoeTopPlaces-Prefix.pch"; sourceTree = "<group>"; };
-		EE5D9172153FA889001ED2FA /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		EE5D9171153FA889001ED2FA /* JoeTopPlaces-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JoeTopPlaces-Prefix.pch"; sourceTree = "<group>"; };
+		EE5D9172153FA889001ED2FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EE5D9173153FA889001ED2FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EE5D9176153FA889001ED2FA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		EE5D9179153FA889001ED2FA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		EE5D917B153FA889001ED2FA /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		EE5D917B153FA889001ED2FA /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		EE5D917C153FA889001ED2FA /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		EE5D917E153FA889001ED2FA /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		EE5D9180153FA889001ED2FA /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		EE5D9182153FA889001ED2FA /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		EE5D9182153FA889001ED2FA /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		EE5D9183153FA889001ED2FA /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		EE5D9185153FA889001ED2FA /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		EE5D9187153FA889001ED2FA /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		EE5D918E153FA889001ED2FA /* JoeTopPlacesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoeTopPlacesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE5D918F153FA889001ED2FA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		EE5D9197153FA889001ED2FA /* JoeTopPlacesTests-Info.plist */ = {isa = PBXFileReference; path = "JoeTopPlacesTests-Info.plist"; sourceTree = "<group>"; };
+		EE5D9197153FA889001ED2FA /* JoeTopPlacesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JoeTopPlacesTests-Info.plist"; sourceTree = "<group>"; };
 		EE5D9199153FA889001ED2FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		EE5D919B153FA889001ED2FA /* JoeTopPlacesTests.h */ = {isa = PBXFileReference; path = JoeTopPlacesTests.h; sourceTree = "<group>"; };
+		EE5D919B153FA889001ED2FA /* JoeTopPlacesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoeTopPlacesTests.h; sourceTree = "<group>"; };
 		EE5D919C153FA88A001ED2FA /* JoeTopPlacesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoeTopPlacesTests.m; sourceTree = "<group>"; };
+		EE5D91A7153FA8A0001ED2FA /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
+		EE5D91A8153FA8A0001ED2FA /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
+		EE5D91A9153FA8A0001ED2FA /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 				EE5D9183153FA889001ED2FA /* SecondViewController.m */,
 				EE5D9185153FA889001ED2FA /* second.png */,
 				EE5D9187153FA889001ED2FA /* second@2x.png */,
+				EE5D91A6153FA8A0001ED2FA /* FlickrFetcher */,
 				EE5D916A153FA889001ED2FA /* Supporting Files */,
 			);
 			path = JoeTopPlaces;
@@ -169,6 +174,16 @@
 				EE5D9198153FA889001ED2FA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EE5D91A6153FA8A0001ED2FA /* FlickrFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				EE5D91A7153FA8A0001ED2FA /* FlickrAPIKey.h */,
+				EE5D91A8153FA8A0001ED2FA /* FlickrFetcher.h */,
+				EE5D91A9153FA8A0001ED2FA /* FlickrFetcher.m */,
+			);
+			path = FlickrFetcher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +301,7 @@
 				EE5D9174153FA889001ED2FA /* AppDelegate.m in Sources */,
 				EE5D917D153FA889001ED2FA /* FirstViewController.m in Sources */,
 				EE5D9184153FA889001ED2FA /* SecondViewController.m in Sources */,
+				EE5D91AA153FA8A0001ED2FA /* FlickrFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
