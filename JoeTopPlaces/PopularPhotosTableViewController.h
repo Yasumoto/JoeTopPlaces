@@ -8,6 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
+@interface PopularPhotosTableViewController : UITableViewController
 @end
