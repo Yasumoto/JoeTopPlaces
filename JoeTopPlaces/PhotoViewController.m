@@ -9,11 +9,12 @@
 #import "PhotoViewController.h"
 
 @interface PhotoViewController ()
-
+@property (nonatomic, strong) UIImageView *imageView;
 @end
 
 @implementation PhotoViewController
-@synthesize scrollView;
+@synthesize scrollView = _scrollView;
+@synthesize imageView = _imageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,12 +28,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    UIImage *image = [UIImage imageWithData:[[NSData alloc] initWithContentsOfFile:@"beer.jpg"]];
+    self.imageView = [[UIImageView alloc] initWithImage:image];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [self.scrollView addSubview:self.imageView];
+    self.scrollView.contentSize = self.imageView.bounds.size;
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    NSLog(@"flashed...");
+    [self.scrollView flashScrollIndicators];
 }
 
 - (void)viewDidUnload
 {
     [self setScrollView:nil];
+    [self setImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
