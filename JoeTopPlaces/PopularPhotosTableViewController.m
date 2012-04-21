@@ -11,18 +11,30 @@
 
 @interface PopularPhotosTableViewController ()
 @property (strong, nonatomic) NSArray *photoDictionaries;
+- (NSArray *) sortPlaces:(NSArray *)places;
 @end
 
 @implementation PopularPhotosTableViewController
 
 @synthesize photoDictionaries = _photoDictionaries;
 
+#pragma mark - Places Helper Methods
+- (NSArray *) sortPlaces:(NSArray *)places {
+    if (places.count <= 1) {
+        return places;
+    }
+    NSMutableArray *sortedPlaces = [NSMutableArray arrayWithCapacity:places.count];
+    //TODO(joe): implement
+    return places;
+}
+
+#pragma mark - View Lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    //self.photoDictionaries = [FlickrFetcher topPlaces];
-    self.photoDictionaries = [NSArray arrayWithObject:@"WOOOOT"];
+    self.photoDictionaries = [self sortPlaces:[FlickrFetcher topPlaces]];
 }
 
 - (void)viewDidUnload
@@ -69,10 +81,10 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    //NSString *placeName = (NSString *)[[self.photoDictionaries objectAtIndex:indexPath.row] objectForKey:FLICKR_PLACE_NAME];
-    NSString *placeName = (NSString *) [self.photoDictionaries objectAtIndex:indexPath.row];
-    cell.textLabel.text = placeName;
-    cell.detailTextLabel.text = placeName;
+    NSString *placeLocationName = [[self.photoDictionaries objectAtIndex:indexPath.row] objectForKey:FLICKR_PLACE_NAME];
+    NSString *cityName = [[placeLocationName componentsSeparatedByString:@","] objectAtIndex:0];
+    cell.textLabel.text = cityName;
+    cell.detailTextLabel.text = [placeLocationName stringByReplacingOccurrencesOfString:[cityName stringByAppendingString:@", "] withString:@""] ;
     return cell;
 }
 
