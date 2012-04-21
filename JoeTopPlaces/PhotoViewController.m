@@ -28,7 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImage *image = [UIImage imageWithData:[[NSData alloc] initWithContentsOfFile:@"beer.jpg"]];
+    UIImage *image = [UIImage imageNamed:@"beer.jpg"];
     self.imageView = [[UIImageView alloc] initWithImage:image];
 }
 
