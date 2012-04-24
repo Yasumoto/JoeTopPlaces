@@ -124,7 +124,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="PTU-2Z-lmJ" kind="push" id="cds-4c-pps"/>
+                                    <segue destination="PTU-2Z-lmJ" kind="push" identifier="ViewPhoto" id="cds-4c-pps"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -205,23 +205,6 @@
         <image name="first" width="16" height="16"/>
         <image name="second" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="PhotoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="PhotosFromPlaceTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotosFromPlaceTableViewController.h"/>
-        </class>
-        <class className="PopularPhotosTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PopularPhotosTableViewController.h"/>
-        </class>
-        <class className="SecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

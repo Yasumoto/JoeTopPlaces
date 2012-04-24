@@ -8,6 +8,7 @@
 
 #import "PhotosFromPlaceTableViewController.h"
 #import "FlickrFetcher.h"
+#import "PhotoViewController.h"
 
 @interface PhotosFromPlaceTableViewController ()
 @property (strong, nonatomic) NSArray *photos;
@@ -50,6 +51,15 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ViewPhoto"]) {
+        if ([segue.destinationViewController isKindOfClass:[PhotoViewController class]]) {
+            [segue.destinationViewController setPhoto:[self.photos objectAtIndex:[self.tableView indexPathForCell:sender].row]];
+        }
+    }
 }
 
 #pragma mark - UITableViewDataSource
