@@ -64,5 +64,7 @@
 
 }
 
-
+- (UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return nil;
+}
 @end

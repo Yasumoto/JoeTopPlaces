@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D89C2E7615470EFE0085DE5C /* RecentPhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D89C2E7515470EFE0085DE5C /* RecentPhotosTableViewController.m */; };
 		EE5D9164153FA889001ED2FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5D9163153FA889001ED2FA /* UIKit.framework */; };
 		EE5D9166153FA889001ED2FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5D9165153FA889001ED2FA /* Foundation.framework */; };
 		EE5D9168153FA889001ED2FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5D9167153FA889001ED2FA /* CoreGraphics.framework */; };
@@ -17,7 +18,6 @@
 		EE5D917D153FA889001ED2FA /* PopularPhotosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5D917C153FA889001ED2FA /* PopularPhotosTableViewController.m */; };
 		EE5D917F153FA889001ED2FA /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5D917E153FA889001ED2FA /* first.png */; };
 		EE5D9181153FA889001ED2FA /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5D9180153FA889001ED2FA /* first@2x.png */; };
-		EE5D9184153FA889001ED2FA /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5D9183153FA889001ED2FA /* SecondViewController.m */; };
 		EE5D9186153FA889001ED2FA /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5D9185153FA889001ED2FA /* second.png */; };
 		EE5D9188153FA889001ED2FA /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE5D9187153FA889001ED2FA /* second@2x.png */; };
 		EE5D9190153FA889001ED2FA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5D918F153FA889001ED2FA /* SenTestingKit.framework */; };
@@ -41,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D89C2E7415470EFE0085DE5C /* RecentPhotosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentPhotosTableViewController.h; sourceTree = "<group>"; };
+		D89C2E7515470EFE0085DE5C /* RecentPhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentPhotosTableViewController.m; sourceTree = "<group>"; };
 		EE5D915F153FA889001ED2FA /* JoeTopPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoeTopPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE5D9163153FA889001ED2FA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EE5D9165153FA889001ED2FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -56,8 +58,6 @@
 		EE5D917C153FA889001ED2FA /* PopularPhotosTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopularPhotosTableViewController.m; sourceTree = "<group>"; };
 		EE5D917E153FA889001ED2FA /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		EE5D9180153FA889001ED2FA /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		EE5D9182153FA889001ED2FA /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		EE5D9183153FA889001ED2FA /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		EE5D9185153FA889001ED2FA /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		EE5D9187153FA889001ED2FA /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		EE5D918E153FA889001ED2FA /* JoeTopPlacesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoeTopPlacesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +135,8 @@
 				EE5D9172153FA889001ED2FA /* AppDelegate.h */,
 				EE5D9173153FA889001ED2FA /* AppDelegate.m */,
 				EE5D9175153FA889001ED2FA /* MainStoryboard_iPhone.storyboard */,
+				D89C2E7415470EFE0085DE5C /* RecentPhotosTableViewController.h */,
+				D89C2E7515470EFE0085DE5C /* RecentPhotosTableViewController.m */,
 				EE5D92031542394B001ED2FA /* PhotoViewController.h */,
 				EE5D92041542394B001ED2FA /* PhotoViewController.m */,
 				EE5D920015423890001ED2FA /* PhotosFromPlaceTableViewController.h */,
@@ -143,8 +145,6 @@
 				EE5D917C153FA889001ED2FA /* PopularPhotosTableViewController.m */,
 				EE5D917E153FA889001ED2FA /* first.png */,
 				EE5D9180153FA889001ED2FA /* first@2x.png */,
-				EE5D9182153FA889001ED2FA /* SecondViewController.h */,
-				EE5D9183153FA889001ED2FA /* SecondViewController.m */,
 				EE5D9185153FA889001ED2FA /* second.png */,
 				EE5D9187153FA889001ED2FA /* second@2x.png */,
 				EE5D91A6153FA8A0001ED2FA /* FlickrFetcher */,
@@ -306,10 +306,10 @@
 				EE5D9170153FA889001ED2FA /* main.m in Sources */,
 				EE5D9174153FA889001ED2FA /* AppDelegate.m in Sources */,
 				EE5D917D153FA889001ED2FA /* PopularPhotosTableViewController.m in Sources */,
-				EE5D9184153FA889001ED2FA /* SecondViewController.m in Sources */,
 				EE5D91AA153FA8A0001ED2FA /* FlickrFetcher.m in Sources */,
 				EE5D920215423890001ED2FA /* PhotosFromPlaceTableViewController.m in Sources */,
 				EE5D92051542394B001ED2FA /* PhotoViewController.m in Sources */,
+				D89C2E7615470EFE0085DE5C /* RecentPhotosTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
