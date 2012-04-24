@@ -15,6 +15,7 @@
 @implementation PhotoViewController
 @synthesize scrollView = _scrollView;
 @synthesize imageView = _imageView;
+@synthesize photo = _photo;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
