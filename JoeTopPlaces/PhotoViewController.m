@@ -34,6 +34,7 @@
     NSData *photo = [[NSData alloc] initWithContentsOfURL:photoURL];
     UIImage *image = [UIImage imageWithData:photo];
     self.imageView = [[UIImageView alloc] initWithImage:image];
+    self.navigationItem.title = [self.photo objectForKey:FLICKR_PHOTO_TITLE];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -57,5 +58,11 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+#pragma mark UIScrollViewDelegate
+- (void) scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale {
+
+}
+
 
 @end
