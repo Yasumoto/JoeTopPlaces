@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PhotosFromPlaceTableViewController : UITableViewController
-
+@property (strong, nonatomic) NSDictionary *location;
 @end

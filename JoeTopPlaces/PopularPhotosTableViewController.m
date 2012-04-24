@@ -8,6 +8,7 @@
 
 #import "PopularPhotosTableViewController.h"
 #import "FlickrFetcher.h"
+#import "PhotosFromPlaceTableViewController.h"
 
 @interface PopularPhotosTableViewController ()
 @property (strong, nonatomic) NSArray *photoDictionaries;
@@ -86,6 +87,15 @@
     cell.textLabel.text = cityName;
     cell.detailTextLabel.text = [placeLocationName stringByReplacingOccurrencesOfString:[cityName stringByAppendingString:@", "] withString:@""] ;
     return cell;
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([@"ViewLocationPhotos" isEqualToString:[segue identifier]]) {
+        if ([segue.destinationViewController isKindOfClass:[PhotosFromPlaceTableViewController class]]) {
+            NSDictionary *place = [self.photoDictionaries objectAtIndex:[self.tableView indexPathForCell:sender].row];
+            [segue.destinationViewController setLocation:place];
+        }
+    }
 }
 
 /*

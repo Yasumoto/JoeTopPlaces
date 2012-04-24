@@ -38,7 +38,6 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    NSLog(@"flashed...");
     [self.scrollView flashScrollIndicators];
 }
 

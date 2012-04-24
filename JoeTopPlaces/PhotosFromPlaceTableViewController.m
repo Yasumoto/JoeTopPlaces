@@ -7,12 +7,16 @@
 //
 
 #import "PhotosFromPlaceTableViewController.h"
+#import "FlickrFetcher.h"
 
 @interface PhotosFromPlaceTableViewController ()
-
+@property (strong, nonatomic) NSArray *photos;
 @end
 
 @implementation PhotosFromPlaceTableViewController
+
+@synthesize location = _location;
+@synthesize photos = _photos;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,6 +36,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.photos = [FlickrFetcher photosInPlace:self.location maxResults:50];
 }
 
 - (void)viewDidUnload
@@ -46,28 +52,36 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - Table view data source
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 1;
+    return [self.photos count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Photos From Place";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    // Configure the cell...
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    NSDictionary *photo = [self.photos objectAtIndex:indexPath.row];
+    NSString *title = [photo objectForKey:FLICKR_PHOTO_TITLE];
+    if (title.length == 0) {
+        title = [photo objectForKey:FLICKR_PHOTO_DESCRIPTION];
+    }
+    if (title.length == 0) {
+        title = @"Unknown";
+    }
+    cell.textLabel.text = title;
+    cell.detailTextLabel.text = [photo objectForKey:FLICKR_PHOTO_DESCRIPTION];
     
     return cell;
 }
@@ -111,7 +125,7 @@
 }
 */
 
-#pragma mark - Table view delegate
+#pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
