@@ -7,6 +7,7 @@
 //
 
 #import "PhotoViewController.h"
+#import "FlickrFetcher.h"
 
 @interface PhotoViewController ()
 @property (nonatomic, strong) UIImageView *imageView;
@@ -29,7 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImage *image = [UIImage imageNamed:@"beer.jpg"];
+    NSURL *photoURL = [FlickrFetcher urlForPhoto:self.photo format:FlickrPhotoFormatLarge];
+    NSData *photo = [[NSData alloc] initWithContentsOfURL:photoURL];
+    UIImage *image = [UIImage imageWithData:photo];
     self.imageView = [[UIImageView alloc] initWithImage:image];
 }
 

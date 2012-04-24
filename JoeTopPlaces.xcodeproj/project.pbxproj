@@ -26,7 +26,6 @@
 		EE5D919A153FA889001ED2FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE5D9198153FA889001ED2FA /* InfoPlist.strings */; };
 		EE5D919D153FA88A001ED2FA /* JoeTopPlacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5D919C153FA88A001ED2FA /* JoeTopPlacesTests.m */; };
 		EE5D91AA153FA8A0001ED2FA /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5D91A9153FA8A0001ED2FA /* FlickrFetcher.m */; };
-		EE5D91FF154237C5001ED2FA /* beer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EE5D91FE154237C5001ED2FA /* beer.jpg */; };
 		EE5D920215423890001ED2FA /* PhotosFromPlaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5D920115423890001ED2FA /* PhotosFromPlaceTableViewController.m */; };
 		EE5D92051542394B001ED2FA /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE5D92041542394B001ED2FA /* PhotoViewController.m */; };
 /* End PBXBuildFile section */
@@ -70,7 +69,6 @@
 		EE5D91A7153FA8A0001ED2FA /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
 		EE5D91A8153FA8A0001ED2FA /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
 		EE5D91A9153FA8A0001ED2FA /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
-		EE5D91FE154237C5001ED2FA /* beer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beer.jpg; sourceTree = "<group>"; };
 		EE5D920015423890001ED2FA /* PhotosFromPlaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosFromPlaceTableViewController.h; sourceTree = "<group>"; };
 		EE5D920115423890001ED2FA /* PhotosFromPlaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosFromPlaceTableViewController.m; sourceTree = "<group>"; };
 		EE5D92031542394B001ED2FA /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 				EE5D9183153FA889001ED2FA /* SecondViewController.m */,
 				EE5D9185153FA889001ED2FA /* second.png */,
 				EE5D9187153FA889001ED2FA /* second@2x.png */,
-				EE5D91FE154237C5001ED2FA /* beer.jpg */,
 				EE5D91A6153FA8A0001ED2FA /* FlickrFetcher */,
 				EE5D916A153FA889001ED2FA /* Supporting Files */,
 			);
@@ -272,7 +269,6 @@
 				EE5D9181153FA889001ED2FA /* first@2x.png in Resources */,
 				EE5D9186153FA889001ED2FA /* second.png in Resources */,
 				EE5D9188153FA889001ED2FA /* second@2x.png in Resources */,
-				EE5D91FF154237C5001ED2FA /* beer.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +481,7 @@
 				EE5D91A2153FA88A001ED2FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EE5D91A3153FA88A001ED2FA /* Build configuration list for PBXNativeTarget "JoeTopPlacesTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +490,7 @@
 				EE5D91A5153FA88A001ED2FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
