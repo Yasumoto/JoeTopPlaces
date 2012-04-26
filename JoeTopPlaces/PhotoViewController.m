@@ -9,6 +9,9 @@
 #import "PhotoViewController.h"
 #import "FlickrFetcher.h"
 
+#define MINIMUM_SCROLL_SCALE 0.5;
+#define MAXIMUM_SCROLL_SCALE 2.0;
+
 @interface PhotoViewController ()
 @property (nonatomic, strong) UIImageView *imageView;
 @end
@@ -34,12 +37,23 @@
     NSData *photo = [[NSData alloc] initWithContentsOfURL:photoURL];
     UIImage *image = [UIImage imageWithData:photo];
     self.imageView = [[UIImageView alloc] initWithImage:image];
+    self.scrollView.minimumZoomScale = MINIMUM_SCROLL_SCALE;
+    self.scrollView.maximumZoomScale = MAXIMUM_SCROLL_SCALE;
     self.navigationItem.title = [self.photo objectForKey:FLICKR_PHOTO_TITLE];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [self.scrollView addSubview:self.imageView];
+    self.scrollView.zoomScale = 1;
     self.scrollView.contentSize = self.imageView.bounds.size;
+    CGFloat widthZoom = self.scrollView.bounds.size.width / self.imageView.image.size.width;
+    CGFloat heightZoom = self.scrollView.bounds.size.height / self.imageView.image.size.height;
+    if (widthZoom > heightZoom) {
+        self.scrollView.zoomScale = widthZoom;
+    }
+    else {
+        self.scrollView.zoomScale = heightZoom;
+    }
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -60,11 +74,7 @@
 }
 
 #pragma mark UIScrollViewDelegate
-- (void) scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale {
-
-}
-
 - (UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    return nil;
+    return self.imageView;
 }
 @end
