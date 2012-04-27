@@ -7,6 +7,7 @@
 //
 
 #import "RecentPhotosTableViewController.h"
+#import "FlickrFetcher.h"
 
 @interface RecentPhotosTableViewController ()
 
@@ -22,6 +23,11 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.recentPhotos = [defaults arrayForKey:@"recent photos"];
 }
 
 - (void)viewDidLoad
@@ -65,10 +71,13 @@
 {
     static NSString *CellIdentifier = @"RecentPhotos";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    // Configure the cell...
-    
-    return cell;
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    NSDictionary *photo = [self.recentPhotos objectAtIndex:indexPath.row];
+    cell.textLabel.text = [photo objectForKey:FLICKR_PHOTO_TITLE];
+    cell.detailTextLabel.text = [photo objectForKey:FLICKR_PHOTO_DESCRIPTION];
+    return cell; 
 }
 
 /*
