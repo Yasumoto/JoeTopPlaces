@@ -28,6 +28,7 @@
 - (void) viewWillAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.recentPhotos = [defaults arrayForKey:@"recent photos"];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad

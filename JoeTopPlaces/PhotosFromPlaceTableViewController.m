@@ -12,6 +12,7 @@
 
 @interface PhotosFromPlaceTableViewController ()
 @property (strong, nonatomic) NSArray *photos;
+-(void) addPhoto:(NSDictionary *)photo toDefaults:(NSUserDefaults *)defaults;
 @end
 
 @implementation PhotosFromPlaceTableViewController
@@ -53,11 +54,19 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void) addPhoto:(NSDictionary *)photo toDefaults:(NSUserDefaults *)defaults {
+    NSArray *recentPhotos = [defaults arrayForKey:@"recent photos"];
+    NSArray *photos = [[[NSMutableArray alloc] initWithObjects:photo, nil] arrayByAddingObjectsFromArray:recentPhotos];
+    [defaults setValue:photos forKey:@"recent photos"];
+}
+
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ViewPhoto"]) {
         if ([segue.destinationViewController isKindOfClass:[PhotoViewController class]]) {
-            [segue.destinationViewController setPhoto:[self.photos objectAtIndex:[self.tableView indexPathForCell:sender].row]];
+            NSDictionary *photo = [self.photos objectAtIndex:[self.tableView indexPathForCell:sender].row];
+            [self addPhoto:photo toDefaults:[NSUserDefaults standardUserDefaults]];
+            [segue.destinationViewController setPhoto:photo];
         }
     }
 }
