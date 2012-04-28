@@ -21,11 +21,39 @@
 
 #pragma mark - Places Helper Methods
 - (NSArray *) sortPlaces:(NSArray *)places {
-    if (places.count <= 1) {
-        return places;
+    return [self merge:places];
+}
+
+-(NSArray *) merge:(NSArray *)places {
+    if ([places count] > 1) {
+        NSRange leftRange;
+        leftRange.length = [places count] / 2;
+        leftRange.location = 0;
+        NSRange rightRange;
+        rightRange.length = [places count] / 2;
+        rightRange.location = [places count] / 2;
+        NSMutableArray *left = [[self merge:[places subarrayWithRange:leftRange]] mutableCopy];
+        NSMutableArray *right = [[self merge:[places subarrayWithRange:rightRange]] mutableCopy];
+        NSMutableArray *sortedPlaces = [[NSMutableArray alloc] init];
+        while ([left count] > 0 && [right count] > 0) {
+            NSString *leftName = [[left objectAtIndex:0] objectForKey:FLICKR_PLACE_NAME];
+            NSString *rightName = [[right objectAtIndex:0] objectForKey:FLICKR_PLACE_NAME];
+            if ([leftName compare:rightName] == NSOrderedAscending) {
+                [sortedPlaces addObject:[left objectAtIndex:0]];
+                [left removeObjectAtIndex:0];
+            }
+            else {
+                [sortedPlaces addObject:[right objectAtIndex:0]];
+                [right removeObjectAtIndex:0];
+            }
+        }
+        if ([left count] > 0) {
+            return [sortedPlaces arrayByAddingObjectsFromArray:left];
+        }
+        else {
+            return [sortedPlaces arrayByAddingObjectsFromArray:right];
+        }
     }
-    NSMutableArray *sortedPlaces = [NSMutableArray arrayWithCapacity:places.count];
-    //TODO(joe): implement
     return places;
 }
 
