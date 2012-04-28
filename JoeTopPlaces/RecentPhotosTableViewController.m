@@ -8,6 +8,7 @@
 
 #import "RecentPhotosTableViewController.h"
 #import "FlickrFetcher.h"
+#import "PhotoViewController.h"
 
 @interface RecentPhotosTableViewController ()
 
@@ -66,6 +67,14 @@
 {
     // Return the number of rows in the section.
     return [self.recentPhotos count];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ViewPhoto"]) {
+        if ( [segue.destinationViewController isKindOfClass:[PhotoViewController class]]) {
+            [segue.destinationViewController setPhoto:[self.recentPhotos objectAtIndex:[self.tableView indexPathForCell:sender].row]]; 
+        }
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

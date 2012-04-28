@@ -56,6 +56,11 @@
 
 - (void) addPhoto:(NSDictionary *)photo toDefaults:(NSUserDefaults *)defaults {
     NSArray *recentPhotos = [defaults arrayForKey:@"recent photos"];
+    for (NSDictionary *addedPhoto in recentPhotos) {
+        if ([addedPhoto isEqualToDictionary:photo]) {
+            return;
+        }
+    }
     NSArray *photos = [[[NSMutableArray alloc] initWithObjects:photo, nil] arrayByAddingObjectsFromArray:recentPhotos];
     [defaults setValue:photos forKey:@"recent photos"];
 }
