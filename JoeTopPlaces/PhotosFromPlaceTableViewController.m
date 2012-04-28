@@ -51,7 +51,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 - (void) addPhoto:(NSDictionary *)photo toDefaults:(NSUserDefaults *)defaults {
