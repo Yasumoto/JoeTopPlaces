@@ -118,6 +118,7 @@
         if ([segue.destinationViewController isKindOfClass:[PhotosFromPlaceTableViewController class]]) {
             NSDictionary *place = [self.photoDictionaries objectAtIndex:[self.tableView indexPathForCell:sender].row];
             [segue.destinationViewController setLocation:place];
+            [[segue.destinationViewController navigationItem] setTitle:[[[place objectForKey:FLICKR_PLACE_NAME] componentsSeparatedByString:@","] objectAtIndex:0]];
         }
     }
 }
