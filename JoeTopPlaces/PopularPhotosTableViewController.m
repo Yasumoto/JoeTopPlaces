@@ -68,6 +68,9 @@
         }
         [photosInCountry addObject:location];
     }
+    for (NSString *placeKey in [placesByCountry allKeys]) {
+        [placesByCountry setValue:[self sortPlaces:[placesByCountry valueForKey:placeKey]] forKey:placeKey] ;
+    }
     return [NSDictionary dictionaryWithDictionary:placesByCountry];
 }
 
