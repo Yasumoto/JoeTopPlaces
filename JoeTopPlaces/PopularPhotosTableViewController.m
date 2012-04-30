@@ -11,7 +11,7 @@
 #import "PhotosFromPlaceTableViewController.h"
 
 @interface PopularPhotosTableViewController ()
-@property (strong, nonatomic) NSArray *photoDictionaries;
+@property (strong, nonatomic) NSDictionary *photoDictionaries;
 - (NSArray *) sortPlaces:(NSArray *)places;
 @end
 
@@ -24,7 +24,7 @@
     return [self merge:places];
 }
 
--(NSArray *) merge:(NSArray *)places {
+- (NSArray *) merge:(NSArray *)places {
     if ([places count] > 1) {
         NSRange leftRange;
         leftRange.length = [places count] / 2;
@@ -57,13 +57,27 @@
     return places;
 }
 
+- (NSDictionary *) splitPlacesFromArray:(NSArray *)places {
+    NSMutableDictionary *placesByCountry = [[NSMutableDictionary alloc] init];
+    for (NSDictionary *location in places) {
+        NSString *country = [[[location objectForKey:FLICKR_PLACE_NAME] componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@","]] lastObject];
+        NSMutableArray *photosInCountry = [placesByCountry objectForKey:country];
+        if (!photosInCountry) {
+            photosInCountry = [[NSMutableArray alloc] init];
+            [placesByCountry setValue:photosInCountry forKey:country];
+        }
+        [photosInCountry addObject:location];
+    }
+    return [NSDictionary dictionaryWithDictionary:placesByCountry];
+}
+
 #pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.photoDictionaries = [self sortPlaces:[FlickrFetcher topPlaces]];
+    self.photoDictionaries = [self splitPlacesFromArray:[FlickrFetcher topPlaces]];
 }
 
 - (void)viewDidUnload
@@ -72,7 +86,7 @@
     // Release any retained subviews of the main view.
 }
 
-- (void) setPhotoDictionaries:(NSArray *)photoDictionaries {
+- (void) setPhotoDictionaries:(NSDictionary *)photoDictionaries {
     if (_photoDictionaries != photoDictionaries) {
         _photoDictionaries = photoDictionaries;
         // Update the view
@@ -89,14 +103,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
-    return 1;
+    return [[self.photoDictionaries allKeys] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger count = [self.photoDictionaries count];
-    return count;
+    return [[self.photoDictionaries valueForKey:[[[self.photoDictionaries allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:section]] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -106,7 +118,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    NSString *placeLocationName = [[self.photoDictionaries objectAtIndex:indexPath.row] objectForKey:FLICKR_PLACE_NAME];
+    NSString *placeLocationName = [[[self.photoDictionaries valueForKey:[[[self.photoDictionaries allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row] objectForKey:FLICKR_PLACE_NAME];
     NSString *cityName = [[placeLocationName componentsSeparatedByString:@","] objectAtIndex:0];
     cell.textLabel.text = cityName;
     cell.detailTextLabel.text = [placeLocationName stringByReplacingOccurrencesOfString:[cityName stringByAppendingString:@", "] withString:@""] ;
@@ -116,7 +128,8 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([@"ViewLocationPhotos" isEqualToString:[segue identifier]]) {
         if ([segue.destinationViewController isKindOfClass:[PhotosFromPlaceTableViewController class]]) {
-            NSDictionary *place = [self.photoDictionaries objectAtIndex:[self.tableView indexPathForCell:sender].row];
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+            NSDictionary *place = [[[self.photoDictionaries valueForKey:[[[self.photoDictionaries allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row] objectForKey:FLICKR_PLACE_NAME];
             [segue.destinationViewController setLocation:place];
             [[segue.destinationViewController navigationItem] setTitle:[[[place objectForKey:FLICKR_PLACE_NAME] componentsSeparatedByString:@","] objectAtIndex:0]];
         }
