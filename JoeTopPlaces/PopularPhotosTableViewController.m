@@ -128,11 +128,16 @@
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [[[self.photoDictionaries allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:section];
+}
+
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([@"ViewLocationPhotos" isEqualToString:[segue identifier]]) {
         if ([segue.destinationViewController isKindOfClass:[PhotosFromPlaceTableViewController class]]) {
             NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-            NSDictionary *place = [[[self.photoDictionaries valueForKey:[[[self.photoDictionaries allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row] objectForKey:FLICKR_PLACE_NAME];
+            NSDictionary *place = [[self.photoDictionaries valueForKey:[[[self.photoDictionaries allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
             [segue.destinationViewController setLocation:place];
             [[segue.destinationViewController navigationItem] setTitle:[[[place objectForKey:FLICKR_PLACE_NAME] componentsSeparatedByString:@","] objectAtIndex:0]];
         }
