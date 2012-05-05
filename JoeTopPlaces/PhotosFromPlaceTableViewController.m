@@ -29,6 +29,14 @@
     return self;
 }
 
+- (void)setPhotos:(NSArray *)photos {
+    if (_photos != photos) {
+        _photos = photos;
+        [self.tableView reloadData];
+    }
+        
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,7 +47,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.photos = [FlickrFetcher photosInPlace:self.location maxResults:50];
+    dispatch_queue_t downloadPhotoListQueue = dispatch_queue_create("download photo list", NULL);
+    dispatch_async(downloadPhotoListQueue, ^{
+        NSArray *photos = [FlickrFetcher photosInPlace:self.location maxResults:50];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.photos = photos;
+        });
+    });
+    dispatch_release(downloadPhotoListQueue);
 }
 
 - (void)viewDidUnload

@@ -80,7 +80,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.photoDictionaries = [self splitPlacesFromArray:[FlickrFetcher topPlaces]];
+    dispatch_queue_t downloadTopPlacesQueue = dispatch_queue_create("top places downloader", NULL);
+    dispatch_async(downloadTopPlacesQueue, ^{
+        NSDictionary *places = [self splitPlacesFromArray:[FlickrFetcher topPlaces]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.photoDictionaries = places;
+        });
+    });
+    dispatch_release(downloadTopPlacesQueue);
 }
 
 - (void)viewDidUnload
