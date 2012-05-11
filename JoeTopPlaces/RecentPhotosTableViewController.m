@@ -38,7 +38,7 @@
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -72,7 +72,7 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ViewPhoto"]) {
         if ( [segue.destinationViewController isKindOfClass:[PhotoViewController class]]) {
-            [segue.destinationViewController setPhoto:[self.recentPhotos objectAtIndex:[self.tableView indexPathForCell:sender].row]]; 
+            [segue.destinationViewController setPhoto:[self.recentPhotos objectAtIndex:[self.tableView indexPathForCell:sender].row]];
         }
     }
 }
@@ -87,7 +87,7 @@
     NSDictionary *photo = [self.recentPhotos objectAtIndex:indexPath.row];
     cell.textLabel.text = [photo objectForKey:FLICKR_PHOTO_TITLE];
     cell.detailTextLabel.text = [photo objectForKey:FLICKR_PHOTO_DESCRIPTION];
-    return cell; 
+    return cell;
 }
 
 /*
@@ -106,10 +106,10 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
+    }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 */
 
@@ -142,4 +142,6 @@
      */
 }
 
+- (IBAction)refresh:(id)sender {
+}
 @end

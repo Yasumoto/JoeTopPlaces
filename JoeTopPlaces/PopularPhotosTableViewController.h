@@ -9,4 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PopularPhotosTableViewController : UITableViewController
+- (IBAction)refresh:(id)sender;
 @end

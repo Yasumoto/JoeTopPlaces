@@ -35,7 +35,7 @@
     [super viewDidLoad];
     self.scrollView.minimumZoomScale = MINIMUM_SCROLL_SCALE;
     self.scrollView.maximumZoomScale = MAXIMUM_SCROLL_SCALE;
-    
+
 }
 
 - (void) viewWillAppear:(BOOL)animated {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
@@ -50,7 +50,13 @@
                             <outlet property="delegate" destination="ao4-Qz-54j" id="dI1-1P-1nw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recently Viewed Photos" id="pr8-VA-AAs"/>
+                    <navigationItem key="navigationItem" title="Recently Viewed Photos" id="pr8-VA-AAs">
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="3Gz-kn-O1B">
+                            <connections>
+                                <action selector="refresh:" destination="ao4-Qz-54j" id="hza-Pm-Nv8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1109" y="481"/>
@@ -99,7 +105,13 @@
                             <outlet property="delegate" destination="Yql-w7-HqW" id="RL6-0J-ya5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Popular Locations" id="0kP-Z9-WFr"/>
+                    <navigationItem key="navigationItem" title="Popular Locations" id="0kP-Z9-WFr">
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="UNt-gZ-MFn">
+                            <connections>
+                                <action selector="refresh:" destination="Yql-w7-HqW" id="0yJ-we-PzH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="c9i-5W-hOo" id="g8I-pS-PE2"/>
                     </connections>
@@ -113,7 +125,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eur-an-L2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Onh-vT-5mc" customClass="PhotosFromPlaceTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FsK-tI-oyC">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -151,7 +163,15 @@
                             <outlet property="delegate" destination="Onh-vT-5mc" id="zNd-YZ-mze"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="hPp-9u-Q9A"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="hPp-9u-Q9A">
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="wjJ-V3-9yN">
+                            <connections>
+                                <action selector="refresh:" destination="Onh-vT-5mc" id="ctm-rb-IdV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1511" y="-158"/>
@@ -254,12 +274,21 @@
         </class>
         <class className="PhotosFromPlaceTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotosFromPlaceTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
         </class>
         <class className="PopularPhotosTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PopularPhotosTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
         </class>
         <class className="RecentPhotosTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentPhotosTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

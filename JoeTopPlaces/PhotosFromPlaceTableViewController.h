@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PhotosFromPlaceTableViewController : UITableViewController
+- (IBAction)refresh:(id)sender;
 @property (strong, nonatomic) NSDictionary *location;
 @end

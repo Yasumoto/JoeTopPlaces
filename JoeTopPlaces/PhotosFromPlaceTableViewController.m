@@ -32,9 +32,24 @@
 - (void)setPhotos:(NSArray *)photos {
     if (_photos != photos) {
         _photos = photos;
-        [self.tableView reloadData];
+        if (self.tableView.window) [self.tableView reloadData];
     }
-        
+
+}
+
+- (IBAction)refresh:(id)sender {
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner startAnimating];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+    dispatch_queue_t downloadPhotoListQueue = dispatch_queue_create("download photo list", NULL);
+    dispatch_async(downloadPhotoListQueue, ^{
+        NSArray *photos = [FlickrFetcher photosInPlace:self.location maxResults:50];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.navigationItem.rightBarButtonItem = sender;
+            self.photos = photos;
+        });
+    });
+    dispatch_release(downloadPhotoListQueue);
 }
 
 - (void)viewDidLoad
@@ -43,18 +58,11 @@
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    dispatch_queue_t downloadPhotoListQueue = dispatch_queue_create("download photo list", NULL);
-    dispatch_async(downloadPhotoListQueue, ^{
-        NSArray *photos = [FlickrFetcher photosInPlace:self.location maxResults:50];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.photos = photos;
-        });
-    });
-    dispatch_release(downloadPhotoListQueue);
+
+    [self refresh:self.navigationItem.rightBarButtonItem];
 }
 
 - (void)viewDidUnload
@@ -121,60 +129,49 @@
     }
     cell.textLabel.text = title;
     cell.detailTextLabel.text = [photo objectForKey:FLICKR_PHOTO_DESCRIPTION];
-    
+
     return cell;
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
     // Return NO if you do not want the specified item to be editable.
     return YES;
-}
-*/
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
+    }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+    }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
-#pragma mark - UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
 @end
