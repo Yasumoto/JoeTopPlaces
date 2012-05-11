@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface RecentPhotosTableViewController : UITableViewController
-- (IBAction)refresh:(id)sender;
 @property (strong, nonatomic) NSArray *recentPhotos;
 @end

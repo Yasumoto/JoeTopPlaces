@@ -50,13 +50,7 @@
                             <outlet property="delegate" destination="ao4-Qz-54j" id="dI1-1P-1nw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recently Viewed Photos" id="pr8-VA-AAs">
-                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="3Gz-kn-O1B">
-                            <connections>
-                                <action selector="refresh:" destination="ao4-Qz-54j" id="hza-Pm-Nv8"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Recently Viewed Photos" id="pr8-VA-AAs"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1109" y="481"/>

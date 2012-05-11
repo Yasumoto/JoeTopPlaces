@@ -39,12 +39,16 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner startAnimating];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
     dispatch_queue_t downloadPhotoQueue = dispatch_queue_create("downlooad photo from flickr", NULL);
     dispatch_async(downloadPhotoQueue, ^{
         NSURL *photoURL = [FlickrFetcher urlForPhoto:self.photo format:FlickrPhotoFormatLarge];
         NSLog(@"We are downloading a photo located at: %@", photoURL);
         NSData *photo = [[NSData alloc] initWithContentsOfURL:photoURL];
         dispatch_async(dispatch_get_main_queue(), ^{
+            self.navigationItem.rightBarButtonItem = nil;
             UIImage *image = [UIImage imageWithData:photo];
             self.imageView = [[UIImageView alloc] initWithImage:image];
             self.navigationItem.title = [self.photo objectForKey:FLICKR_PHOTO_TITLE];

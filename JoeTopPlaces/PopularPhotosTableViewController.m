@@ -75,19 +75,27 @@
 }
 
 #pragma mark - View Lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+- (IBAction)refresh:(id)sender {
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner startAnimating];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
     dispatch_queue_t downloadTopPlacesQueue = dispatch_queue_create("top places downloader", NULL);
     dispatch_async(downloadTopPlacesQueue, ^{
         NSDictionary *places = [self splitPlacesFromArray:[FlickrFetcher topPlaces]];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.photoDictionaries = places;
+            self.navigationItem.rightBarButtonItem = sender;
         });
     });
     dispatch_release(downloadTopPlacesQueue);
+}
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view, typically from a nib.
+    [self refresh:self.navigationItem.rightBarButtonItem];
 }
 
 - (void)viewDidUnload
@@ -100,7 +108,7 @@
     if (_photoDictionaries != photoDictionaries) {
         _photoDictionaries = photoDictionaries;
         // Update the view
-        [self.tableView reloadData];
+        if (self.tableView.window) [self.tableView reloadData];
     }
 }
 
@@ -190,13 +198,4 @@
  }
  */
 
-#pragma mark - UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-}
-
-- (IBAction)refresh:(id)sender {
-}
 @end
